@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"/>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <title></title>
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <link href="css/style_login.css" rel="stylesheet"/>
+    <link href="css/Cupcake-512.ico" rel="shortcut icon" type="image/x-icon"/>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+    <header class="header">
+
+    </header><!-- .header-->
+
+    <main class="content">
+        <center>
+            <form class="form-container" th:action="@{/login_check}" method="post">
+                <div class="form-title"><h2>Sign in Cooking Machine</h2></div>
+                <div class="form-title">Login</div>
+                <input type="text" name="login_login" class="form-field"
+                       placeholder="login" required="true" autofocus="true"/><br/>
+                <div class="form-title">Password</div>
+                <input type="password" name="login_password" class="form-field"
+                       placeholder="password" required="true"/><br/>
+
+                <div class="submit-container">
+                    <center>
+                        <p id = "informText" th:text ="${error}"></p><br/>
+                        <input id = "sub" class="submit-button" type="submit" value="Sign In"/>
+                    </center>
+                </div>
+                <div class="submit-container">
+                    <center>
+                        <div class="form-title">Don't have an account?</div>
+                    </center>
+                    <center>
+                        <a th:href="@{registration}"><input class="registration-button" type="button" value="Sign up"/></a>
+                    </center>
+
+                </div>
+            </form>
+        </center>
+    </main><!-- .content -->
+
+</div><!-- .wrapper -->
+
+<footer class="footer">
+    <span id="log_footer">Cooking Machine Corp &copy; 2017 Odessa, Ukraine</span>
+</footer><!-- .footer -->
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Cooking machine</title>
+
+	<link rel="stylesheet" href="css/st1.css"/>
+	<link href="css/Cupcake-512.ico" rel="shortcut icon" type="image/x-icon"/>
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"/>
+</head>
+<body>
+	<nav>
+		
+		<a href="/index.html#">Главная</a>
+		<a href="/index.html#about-us">О нас</a>
+		<a href = "/rec.html">Рецепты</a>
+		<a href="/search1">Поиск по ингредиентам</a>
+		<a href="/index.html#contacts-section">Контакты</a>
+
+
+		<ul>
+			<li ><a href = "#" th:text = "${user}"> </a>
+			<ul>
+				<li><a href = "/userDish">Мои рецепты</a></li>
+				<li><a href = "/userRec">Добавить рецепт</a></li>
+				<li><a href = "/sendMail">Задать вопрос</a></li>
+				<li><a href = "/logout_test">Выйти </a></li>
+			</ul>
+			</li>
+		</ul>
+
+		
+	</nav>
+	<section class="main">
+		<div class="main-content">
+			<p class="main-content-header">EST. | 2017</p>
+			<h1>Cooking machine</h1>
+			<p class="main-content-footer">Открой новые грани кулинарии вместе с нами</p>
+		</div>
+	</section>
+
+
+	<section id="about-us" class="about-us">
+		<h2>О нас</h2>
+		<p>Мы создали Cooking machine для всех, кто любит готовить и для кого кулинария - нечто большее, чем просто приготовление еды.</p>
+		<p>Это сайт о хороших рецептах с пошаговыми инструкциями, о секретах и кулинарных трюках, интересных книгах и нужных инструментах. Здесь вы найдете рецепты блюд, которые можно с легкостью приготовить из ингредиентов в вашем холодильнике.</p>
+	</section>
+
+
+	<section class="content">
+		<img class="picture" src="css/Kokos-afrodiziak-vliyanie-na-potentsiyu.jpg" alt=""/>
+		<div class="picture-description">
+			<h2>Интересный факт</h2>
+			<p>	Считается, что кокосовую воду (не молоко) в крайнем случае можно использовать как замену плазмы крови человека. Как оказалось, кокосовая вода стерильна, и обладает идеальным уровнем pH. Эта жидкость используется растением как источник питательных веществ для зародыша.
+			</p>
+		</div>
+	</section>
+
+
+	<section class="content">
+		<div class="picture-description">
+			<h2>10 продуктов, которые защитят вас от мобильной радиации</h2>
+			<p>Современного человека почти невозможно представить без мобильного телефона, это устройство представляет собой значительную угрозу для вашего здоровья. Эффективно бороться с мобильной радиацией помогут: кудрявая капуста, рыбий жир, имбирь желтый, миндаль, спаржа, морские водоросли, чеснок, говядина, артишок, цельные крупы.
+			</p>
+		</div>
+		<img class="picture" src="css/1.JPG" alt=""/>
+	</section>
+
+<div id="pic" class="bg_parralax" data-type="background" data-speed="10"></div>
+
+
+
+	<section id="contacts-section" class="contacts">
+		<h2>Контакты</h2>
+		<ul>
+			<li>Наш телефон: <span>+380936543992</span></li>
+			<li>Напишите нам:</li>
+			<li>По техническим вопросам - <span>bezrukovajulia961@gmail.com, ilya.yashkun@gmail.com</span></li>
+			<li>По вопросам сотрудничества и размещения рекламы -<span> ivandermenji97@gmail.com, elen.jellyfish@gmail.com</span></li>
+	    </ul>
+	</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="common.js"></script>
+
+	<footer>
+		<p class = "footer-text"> © Cooking Mashine Corp © 2017 Odessa, Ukraine</p>
+	</footer>
+</body>
+</html>

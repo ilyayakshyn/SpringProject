@@ -1,0 +1,78 @@
+
+*{
+    text-decoration: none;
+}
+
+body{
+    overflow-x:hidden;
+    margin: 0;
+    background-image: url(backgr1.jpg);
+    background-repeat: repeat;
+    font-family: 'Playfair Display', serif;
+
+}
+
+h1{
+    color: #fff;
+    font-size: 51px;
+    text-align: center;
+    line-height: 100px;
+    margin: 5% 0 2% 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    background-image: url(backgr1.jpg);
+    background-repeat: repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0;
+    margin-top: 0;
+    font-family: 'Playfair Display', serif;
+}
+.main-content {
+    padding: 3% 6%;
+    background-color: #0D1624;
+    color: #f7f3c8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid #BEAC74;
+    vertical-align: baseline;
+    outline: 1px dashed #BEAC74;
+    outline-offset: -7px ;
+
+}
+.content{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.reasons {
+    padding: 0 20px;
+}
+.reasons-text:before {
+    content: " - ";
+}
+
+.reasons-text:after {
+    content: "; ";
+}
+
+.submit-button{
+    color: #BEAC74;
+    background-color: #0D1624;
+    border: 1px solid #BEAC74;
+}
+.submit-button:hover{
+    outline: 1px solid #BEAC74;
+    outline-offset: 3px;
+}

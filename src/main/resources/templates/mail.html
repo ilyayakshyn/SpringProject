@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+
+
+    <link rel="stylesheet" href="/css/mail.css"/>
+    <link href="css/Cupcake-512.ico" rel="shortcut icon" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"/>
+
+</head>
+<body>
+<nav>
+
+    <a href="/index.html#">Главная</a>
+    <a href="/index.html#about-us">О нас</a>
+    <a href = "/rec.html">Рецепты</a>
+    <a href="/search1">Поиск по ингредиентам</a>
+    <a href="/index.html#contacts-section">Контакты</a>
+
+
+    <ul>
+        <li ><a href = "#" th:text = "${user}"> </a>
+            <ul>
+                <li><a href = "/userDish">Мои рецепты</a></li>
+                <li><a href = "/userRec">Добавить рецепт</a></li>
+
+                <li><a href = "/sendMail">Задать вопрос</a></li>
+                <li><a href = "/logout_test">Выйти </a></li>
+            </ul>
+        </li>
+    </ul>
+
+
+</nav>
+
+<div class = "main">
+    <div class = "main-content">
+        <form class="form-container"  th:action="@{/sendMail}" method="post" th:object="${mailToSend}">
+            <p class="form-title"><h2>Отправить письмо</h2></p>
+            <p class="form-title">Ваш e-mail: </p>
+            <input type="email" class="form-field" required="true" id="dish_name" placeholder="Введите адрес Вашей электронной почты" th:field="*{senderMail}" /><br />
+
+            <p class="form-title">Тема: </p>
+            <input type="text" class="form-field" required="true" id="dish_details" placeholder="Введите тему сообщения" th:field="*{subject}" /><br />
+
+            <p class="form-title">Сообщение: </p>
+            <textarea type="text" class="form-field" required="true" id="coocking_receptie" placeholder="Введите сообщение" th:field="*{text}" ></textarea><br />
+
+
+            <div class="submit-container">
+                <input class="submit-button" type="submit" value="Отправить" />
+            </div>
+        </form>
+    </div>
+</div>
+<footer>
+    <p class = "footer-text"> © Cooking Mashine Corp © 2017 Odessa, Ukraine</p>
+</footer>
+</body>
+</html>

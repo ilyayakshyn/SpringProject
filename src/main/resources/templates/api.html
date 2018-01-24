@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Coocking Machine API's</title>
+</head>
+<body>
+
+<table border="1">
+    <thead style="background: rgba(110,106,104,0.45)">
+        <tr>
+            <td>
+                Method
+            </td>
+            <td>
+                Request
+            </td>
+            <td>
+                Action
+            </td>
+        </tr>
+    </thead>
+
+
+    <tr>
+        <td>
+            GET
+        </td>
+        <td>
+            /api/dish
+        </td>
+        <td>
+            Get all dishes
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            GET
+        </td>
+        <td>
+            /api/dish?dishId=1
+        </td>
+        <td>
+            Get dish by ID
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            GET
+        </td>
+        <td>
+            /api/dish?ingredient=1&amp;ingredient=2&amp;ingredient=3
+        </td>
+        <td>
+            Get dishes by ingredient ID (from 1 to N ingredients)
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            GET
+        </td>
+        <td>
+            /api/ingredients
+        </td>
+        <td>
+            Get all ingredients
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>
+            GET
+        </td>
+        <td>
+            /api/ingredients?ingredientId=1
+        </td>
+        <td>
+            Get ingredient by ID
+        </td>
+    </tr>
+
+
+
+</table>
+
+</body>
+</html>

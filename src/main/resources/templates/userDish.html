@@ -1,0 +1,151 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8"/>
+
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"/>
+
+    <link rel="stylesheet" type="text/css" href="css/t1.css"/>
+    <link rel="stylesheet" type="text/css" href="css/datatable.css"/>
+    <link href="css/Cupcake-512.ico" rel="shortcut icon" type="image/x-icon"/>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" charset="utf8" src="css/datatable.js"></script>
+
+</head>
+
+
+<body>
+<nav>
+
+    <a href="/index.html#">Главная</a>
+    <a href="/index.html#about-us">О нас</a>
+    <a href = "/rec.html">Рецепты</a>
+    <a href="/search1">Поиск по ингредиентам</a>
+    <a href="/index.html#contacts-section">Контакты</a>
+
+    <ul>
+        <li ><a href = "#" th:text = "${user}"> </a>
+            <ul>
+                <li><a href = "/userDish">Мои рецепты</a></li>
+                <li><a href = "/userRec">Добавить рецепт</a></li>
+
+                <li><a href = "/sendMail">Задать вопрос</a></li>
+                <li><a href = "/logout_test">Выйти </a></li>
+            </ul>
+        </li>
+    </ul>
+
+</nav>
+<div class = "main">
+    <div class = "main-content">
+        <table id="example" class="display" cellspacing="0" width="100% " float="initial">
+            <thead>
+            <tr>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="element : ${table}">
+                <td>
+                    <img  class="recPic" th:src="@{${'/' + element.imgSrc}}"/>
+                </td>
+                <td>
+                    <button class="bDel" onclick = "onButCl(this)" th:name = "${element.dishId}"> X </button>
+                    <p>
+                        <a class="recName" th:href="@{/userDish/__${element.dishId}__}"> <text th:text="${element.name}"/></a>
+
+
+                    </p>
+
+                    <p id="desc"  class = "recDet" th:text="${element.details}"></p>
+
+
+                </td>
+            </tr>
+            </tbody>
+            <script type="text/javascript" language="javascript">
+                /*<![CDATA[*/
+
+                function onButCl(el) {
+                    var answ =  confirm("Вы уверены, что хотите удалить рецепт? Еще не поздно передумать!");
+                    console.log(answ);
+                    console.log(el.getAttribute("name").valueOf());
+                    if (answ == true) {
+                        var array = [];
+                        array.push({id: el.getAttribute("name").valueOf()});
+
+                        $.ajax
+                        ({
+                            type: "POST",
+                            url: '/userDish',
+                            dataType: 'json',
+                            async: true,
+                            //json object to sent to the authentication url
+                            data: JSON.stringify(array),
+                            success: function (response) {
+                                if (response == true){
+                                    location.reload();
+                                }
+                            }
+                        })
+                    }
+                }
+
+              /*  $(document).ready(function() {
+
+
+                    /*console.log("bDel1");
+                    var modal = document.getElementById('myModal');
+                    var z = document.getElementsByClassName("bDel");
+                    var bCanc= document.getElementsByClassName("bCancel")[0];
+                    var bAcc= document.getElementsByClassName("bAccept")[0];
+                    console.log(z);
+                    console.log("bDel12");
+                    var span = document.getElementsByClassName("close")[0];
+                    console.log(span);
+                    for (var i = 0; i < z.length; i++) {
+                        console.log("bDel1 in cirav");
+                        z[i].onclick = function () {
+                            console.log("in func");
+                            modal.style.display = "block";
+                        };
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        bCanc.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        window.onclick = function(event) {
+                            if (event.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        }
+
+                        }})*/
+                /*]]>*/
+            </script>
+        </table>
+    </div>
+</div>
+
+
+<footer>
+    <p class = "footer-text"> © Cooking Mashine Corp © 2017 Odessa, Ukraine</p>
+</footer>
+</body>
+
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+</script>
+<script>
+    $('#myTable').DataTable( {
+        select: true
+    } );
+</script>
+
+
+</html>
